@@ -5,6 +5,15 @@ import { products } from '../../data/products';
 
 
 function HomePage() {
+
+    fetch('http://localhost:3000/api/products')
+        .then((response) => {
+            return response.json()
+                .then((data) => {
+                    console.log(data)
+                })
+        })
+
     return (
         <>
 
@@ -15,7 +24,7 @@ function HomePage() {
                 <div className="products-grid">
                     {products.map(product => {
                         return (
-                            <div key = {product.id}className="product-container">
+                            <div key={product.id} className="product-container">
                                 <div className="product-image-container">
                                     <img className="product-image"
                                         src={product.image} />
@@ -34,7 +43,7 @@ function HomePage() {
                                 </div>
 
                                 <div className="product-price">
-                                    ${(product.priceCents /100).toFixed(2)}
+                                    ${(product.priceCents / 100).toFixed(2)}
                                 </div>
 
                                 <div className="product-quantity-container">

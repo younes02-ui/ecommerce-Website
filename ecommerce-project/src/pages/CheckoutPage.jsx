@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom'
 
 
 function CheckoutPage() {
+
+
+    
     return (
         <>
             <title>Checkout</title>

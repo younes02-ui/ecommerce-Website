@@ -1,9 +1,9 @@
 import axios from 'axios'
 import { useState, useEffect, Fragment } from 'react'
 import './Orders.css'
-import Header from '../components/Header'
+import Header from '../../components/Header'
 import { Link } from 'react-router-dom'
-import { formatMoney } from '../utils/money'
+import { formatMoney } from '../../utils/money'
 import dayjs from 'dayjs'
 
 function Orders({ cart }) {

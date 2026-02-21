@@ -11,10 +11,11 @@ function Orders({ cart }) {
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        axios.get('/api/orders?expand=products')
-            .then((response) => {
-                setOrders(response.data);
-            })
+        const getOrders = async () => {
+            const response = await axios.get('/api/orders?expand=products')
+            setOrders(response.data);
+        }
+        getOrders();
     }, []);
 
 
@@ -28,7 +29,7 @@ function Orders({ cart }) {
                 <div className="orders-grid">
                     {orders.map((order) => {
                         return (
-                            <div className="order-container">
+                            <div key={order.id} className="order-container">
 
                                 <div className="order-header">
                                     <div className="order-header-left-section">

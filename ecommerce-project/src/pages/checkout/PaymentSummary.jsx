@@ -2,7 +2,7 @@ import './CheckoutHeader.css'
 import './CheckoutPage.css'
 import { formatMoney } from '../../utils/money'
  
- function PaymentSummary (paymentSummary){
+ function PaymentSummary ({ paymentSummary }){
 
 
     return (
